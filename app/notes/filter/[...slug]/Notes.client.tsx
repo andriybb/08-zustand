@@ -10,6 +10,7 @@ import NoteForm from '@/components/NoteForm/NoteForm';
 import type { NoteTag } from '@/types/note';
 import { useState } from 'react';
 import { useDebounce } from 'use-debounce';
+import Link from "next/link";
 
 interface Props {
   tag?: NoteTag | 'all';
@@ -52,9 +53,9 @@ const NotesByCategory = ({ tag }: Props) => {
           setCurrentPage={setPage}
         />
       )}
-      <button className={css.button} onClick={() => setIsModalOpen(true)}>
+      <Link className={css.button} href="/notes/action/create">
         Створити нотатку
-      </button>
+      </Link>
 </div>
       {isModalOpen && (
         <Modal onClose={() => setIsModalOpen(false)}>
