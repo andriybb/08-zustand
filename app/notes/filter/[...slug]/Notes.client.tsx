@@ -5,8 +5,6 @@ import { fetchNotes } from '@/lib/api';
 import NoteList from '@/components/NoteList/NoteList';
 import SearchBox from '@/components/SearchBox/SearchBox';
 import Pagination from '@/components/Pagination/Pagination';
-import Modal from '@/components/Modal/Modal';
-import NoteForm from '@/components/NoteForm/NoteForm';
 import type { NoteTag } from '@/types/note';
 import { useState } from 'react';
 import { useDebounce } from 'use-debounce';
@@ -19,7 +17,7 @@ interface Props {
 const NotesByCategory = ({ tag }: Props) => {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const [debouncedSearch] = useDebounce(search, 500);
 
@@ -57,11 +55,10 @@ const NotesByCategory = ({ tag }: Props) => {
         Створити нотатку
       </Link>
 </div>
-      {isModalOpen && (
-        <Modal onClose={() => setIsModalOpen(false)}>
-          <NoteForm onClose={() => setIsModalOpen(false)} />
-        </Modal>
-      )}
+      
+   
+        
+      
 
       {isLoading && <p>Завантаження...</p>}
 

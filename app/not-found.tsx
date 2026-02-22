@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "NoteHub 404 - Page not found",
-  description: "Soorry, the page you are looking for does not exist.",
+  description: "Sorry, the page you are looking for does not exist.",
   openGraph: {
     title: `NoteHub 404 - Page not found`,
     description: "Sorry, the page you are looking for does not exist.",
